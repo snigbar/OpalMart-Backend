@@ -1,0 +1,49 @@
+{
+  "name": "oplamart-backend",
+  "version": "1.0.0",
+  "description": "this is the backend part for opalmart project",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./dist/app/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/app/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint source --ignore-path .eslintignore --ext .ts",
+    "lint:fix": "npx eslint src --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"🌟🐺Husky - Running pre-commit checks...🚀🐺\" && npx lint-staged"
+    }
+  },
+  "author": "Md. Akbar Alam",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.4",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.12.0",
+    "globals": "^15.10.0",
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.0"
+  }
+}
